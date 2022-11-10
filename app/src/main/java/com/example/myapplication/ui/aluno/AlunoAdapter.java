@@ -15,10 +15,10 @@ import java.util.List;
 public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ViewHolder> {
     private static final String TAG = "AlunoAdapter";
 
-    private List<String> mData;
+    private List<String> mLista;
 
     public AlunoAdapter(List<String> dataSet) {
-        mData = dataSet;
+        mLista = dataSet;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -49,11 +49,11 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ViewHolder> 
 
         // Get element from your dataset at this position and replace the contents of the view
         // with that element
-        viewHolder.getTextView().setText(mData.get(position));
+        viewHolder.getTextView().setText(mLista.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return mLista.size();
     }
 }
