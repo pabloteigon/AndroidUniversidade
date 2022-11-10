@@ -26,15 +26,15 @@ public class AlunosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alunos);
 
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Alunos");
+
         // Criando alguns alunos
         Alunos.add("Pedro");
         Alunos.add("João");
         Alunos.add("Bruna");
         Alunos.add("Laura");
         Alunos.add("Jorge");
-
-        toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Alunos");
 
         etNomeAluno = findViewById(R.id.etNomeAluno);
 
