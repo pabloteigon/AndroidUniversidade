@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.aluno;
+package com.example.myapplication.ui.professor;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,35 +9,28 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.model.Aluno;
 
 import java.util.List;
 
-public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ViewHolder> {
+public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.ViewHolder> {
     private static final String TAG = "AlunoAdapter";
 
-    private List<Aluno> mLista;
+    private List<String> mLista;
 
-    public AlunoAdapter(List<Aluno> dataSet) {
+    public ProfessorAdapter(List<String> dataSet) {
         mLista = dataSet;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView tvId;
-        private final TextView tvName;
+        private final TextView textView;
 
         public ViewHolder(View v) {
             super(v);
-            tvId = (TextView) v.findViewById(R.id.tvId);
-            tvName = (TextView) v.findViewById(R.id.tvName);
+            textView = (TextView) v.findViewById(R.id.tvName);
         }
 
-        public TextView getTvId() {
-            return tvId;
-        }
-
-        public TextView getTvName() {
-            return tvName;
+        public TextView getTextView() {
+            return textView;
         }
     }
 
@@ -56,8 +49,7 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ViewHolder> 
 
         // Get element from your dataset at this position and replace the contents of the view
         // with that element
-        viewHolder.getTvId().setText(mLista.get(position).getId());
-        viewHolder.getTvName().setText(mLista.get(position).getName());
+        viewHolder.getTextView().setText(mLista.get(position));
     }
 
     @Override

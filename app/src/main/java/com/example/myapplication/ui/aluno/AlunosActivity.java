@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.myapplication.R;
+import com.example.myapplication.model.Aluno;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,8 @@ public class AlunosActivity extends AppCompatActivity {
     private Button btnCadastrarAluno;
     private Button btnListaAlunos;
     private EditText etNomeAluno;
-    private ArrayList<String> Alunos = new ArrayList<>();
+    private EditText etIdAluno;
+    private ArrayList<Aluno> Alunos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +34,20 @@ public class AlunosActivity extends AppCompatActivity {
         toolbar.setTitle("Alunos");
 
         etNomeAluno = findViewById(R.id.etNomeAluno);
+        etIdAluno = findViewById(R.id.etIdAluno);
 
         btnCadastrarAluno = findViewById(R.id.btnCadastrarAluno);
         btnCadastrarAluno.setOnClickListener(view -> {
             //Pega o texto que foi digitado no EditText e atribue a uma variável
             String nome = etNomeAluno.getText().toString();
+            String id = etIdAluno.getText().toString();
             //Verifica se o texto não é vazio
-            if (nome.length() == 0) {
+            if (nome.length() == 0 || id.length() == 0) {
                 //Mostra mensagem do tipo Toast com mensagem de erro
                 Toast.makeText(this, "Deu erro!", Toast.LENGTH_LONG).show();
             } else {
                 //Adicionao o texto digitado na lista Alunos com o add
-                Alunos.add(nome);
+                Alunos.add(new Aluno(id, nome));
                 //Mostra mensagem do tipo Toast com mesagem de sucesso
                 Toast.makeText(this, "Cadastrado com sucesso!", Toast.LENGTH_LONG).show();
                 //Limpa o EditText
@@ -62,10 +66,10 @@ public class AlunosActivity extends AppCompatActivity {
 
     private void insereAlunosNaLista() {
         // Criando alguns alunos
-        Alunos.add("Pedro");
-        Alunos.add("João");
-        Alunos.add("Bruna");
-        Alunos.add("Laura");
-        Alunos.add("Jorge");
+        Alunos.add(new Aluno("1", "Pedro"));
+        Alunos.add(new Aluno("2", "João"));
+        Alunos.add(new Aluno("4", "Bruna"));
+        Alunos.add(new Aluno("3", "Laura"));
+        Alunos.add(new Aluno("44", "Jorge"));
     }
 }

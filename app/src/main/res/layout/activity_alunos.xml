@@ -25,6 +25,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTexto" />
 
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insira o ID do aluno."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeAluno" />
+
+    <EditText
+        android:id="@+id/etIdAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvId" />
+
     <Button
         android:id="@+id/btnCadastrarAluno"
         android:layout_width="match_parent"
@@ -32,7 +49,7 @@
         android:layout_margin="8dp"
         android:text="Cadastrar Aluno"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNomeAluno" />
+        app:layout_constraintTop_toBottomOf="@+id/etIdAluno" />
 
     <Button
         android:id="@+id/btnListaAlunos"

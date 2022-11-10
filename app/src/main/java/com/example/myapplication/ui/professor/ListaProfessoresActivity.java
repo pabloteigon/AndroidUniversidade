@@ -1,43 +1,43 @@
-package com.example.myapplication.ui.aluno;
-
-import android.os.Bundle;
+package com.example.myapplication.ui.professor;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
+
 import com.example.myapplication.R;
-import com.example.myapplication.model.Aluno;
+import com.example.myapplication.ui.aluno.AlunoAdapter;
 
 import java.util.ArrayList;
 
-public class ListaAlunosActivity extends AppCompatActivity {
+public class ListaProfessoresActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private AlunoAdapter adapter;
-    private ArrayList<Aluno> Alunos;
+    private ProfessorAdapter adapter;
+    private ArrayList<String> Professores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_alunos);
+        setContentView(R.layout.activity_lista_professores);
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Lista de Alunos");
+        toolbar.setTitle("Lista de Professores");
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            Alunos = extras.getParcelableArrayList("BUNDLE");
-            setupList(Alunos);
+            Professores = extras.getStringArrayList("BUNDLE");
+            setupList(Professores);
         }
     }
 
-    private void setupList(ArrayList<Aluno> Alunos) {
+    private void setupList(ArrayList<String> Alunos) {
         // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.rvAlunos);
+        RecyclerView recyclerView = findViewById(R.id.rvProfessores);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AlunoAdapter(Alunos);
+        adapter = new ProfessorAdapter(Alunos);
         recyclerView.setAdapter(adapter);
     }
 }
