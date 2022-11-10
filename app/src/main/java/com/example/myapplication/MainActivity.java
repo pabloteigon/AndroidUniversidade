@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.myapplication.ui.aluno.AlunosActivity;
+import com.example.myapplication.ui.professor.ProfessoresActivity;
 
 public class MainActivity extends AppCompatActivity {
 
